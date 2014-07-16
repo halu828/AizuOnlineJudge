@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		8CD451DD195B63D7000FC3B3 /* AizuOnlineJudge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AizuOnlineJudge; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CD451E0195B63D7000FC3B3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		8CD451E0195B63D7000FC3B3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; lineEnding = 0; path = main.c; sourceTree = "<group>"; };
 		8CD451E2195B63D7000FC3B3 /* AizuOnlineJudge.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AizuOnlineJudge.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
