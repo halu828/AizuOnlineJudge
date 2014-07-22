@@ -7,40 +7,18 @@
 //
 
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
 
 int main() {
-	int n, i, alen, blen, carry, out[82];
-	char a[10000], b[10000];
-	
-	scanf("%d", &n);
-	while (n-- > 0) {
-		scanf("%s", a);
-		scanf("%s", b);
-		alen = (int)strlen(a);
-		blen = (int)strlen(b);
-		if (alen > 80 || blen > 80){
-			printf("overflow\n");
-			continue;
-		}
-		i = 0;
-		carry = 0;
-		while (alen || blen) {
-			out[i] = carry;
-			if (alen) out[i] += a[--alen] - '0';
-			if (blen) out[i] += b[--blen] - '0';
-			carry = out[i] / 10;
-			out[i++] %= 10;
-		}
-		if (carry) out[i] = 1;
-		else i--;
-		if (i >= 80) {
-			printf("overflow\n");
-			continue;
-		}
-		for (; i >= 0; i--)
-			printf("%d", out[i]);
-		printf("\n");
+	int a, b, tmp = 0;
+	double x, y;
+
+	while (scanf("%d,%d", &a, &b) != EOF) {
+		if (a == 0 && b == 0) break;
+		x += a*sin(tmp*M_PI/180);
+		y += a*cos(tmp*M_PI/180);
+		tmp += b;
 	}
+	printf("%d\n%d\n", (int)x, (int)y);
 	return 0;
 }
