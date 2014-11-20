@@ -7,18 +7,36 @@
 //
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-	int a, b, tmp = 0;
-	double x, y;
+	int x, y, size, i, j, count = 0, max = 0;
+	int grid[12][12] = {};
 
-	while (scanf("%d,%d", &a, &b) != EOF) {
-		if (a == 0 && b == 0) break;
-		x += a*sin(tmp*M_PI/180);
-		y += a*cos(tmp*M_PI/180);
-		tmp += b;
+	while (scanf("%d,%d,%d", &x, &y, &size) != EOF) {
+		grid[x][y]++;
+		grid[x-1][y]++;
+		grid[x+1][y]++;
+		grid[x][y-1]++;
+		grid[x][y+1]++;
+		if (size > 1) {
+			grid[x+1][y+1]++;
+			grid[x+1][y-1]++;
+			grid[x-1][y+1]++;
+			grid[x-1][y-1]++;
+		}
+		if (size == 3) {
+			grid[x][y+2]++;
+			grid[x+2][y]++;
+			grid[x][y-2]++;
+			grid[x-2][y]++;
+		}
 	}
-	printf("%d\n%d\n", (int)x, (int)y);
+	for (i = 0; i < 10; i++) {
+		for (j = 0; j < 10; j++) {
+			if (grid[i][j] == 0) count++;
+			else if (grid[i][j] > max) max = grid[i][j];
+		}
+	}
+	printf("%d\n%d\n", count, max);
 	return 0;
 }
